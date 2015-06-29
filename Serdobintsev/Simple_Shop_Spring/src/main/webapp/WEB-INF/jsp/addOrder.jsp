@@ -19,7 +19,7 @@
             <a href="<c:url value="/user/logout" />">Выход</a>
         </div>
         <hr/>
-         <form method="GET" action="<c:url value="/shop/saveOrder"/>">
+         <form method="POST" action="<c:url value="/shop/saveOrder"/>">
              <div class="col-md-6">
                     <div class="panel panel-default">
                         <div class="panel-heading">

@@ -5,6 +5,7 @@ org\itstep\java\web\mavenShop3\service\GoodService.class
 org\itstep\java\web\mavenShop3\model\Good.class
 org\itstep\java\web\mavenShop3\model\User$1.class
 org\itstep\java\web\mavenShop3\model\Category.class
+org\itstep\java\web\mavenShop3\service\MySQLUserService.class
 org\itstep\java\web\mavenShop3\model\BasketItem.class
 org\itstep\java\web\mavenShop3\model\Order.class
 org\itstep\java\web\mavenShop3\model\User.class

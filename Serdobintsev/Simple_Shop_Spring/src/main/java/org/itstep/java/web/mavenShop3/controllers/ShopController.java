@@ -164,7 +164,7 @@ public class ShopController {
         return "addOrder";
     }
     
-    @RequestMapping(value = "/saveOrder", method = RequestMethod.GET)
+    @RequestMapping(value = "/saveOrder", method = RequestMethod.POST)
     public String saveOrder(
             @RequestParam(value = "id") Integer id,
             @RequestParam(value = "DeliverAddress") String DeliverAddress,
@@ -191,7 +191,7 @@ public class ShopController {
         bask = basket;
         model.addAttribute("basket", bask);
         
-        return "redirect:/shop/category/" + 1;
+        return "redirect:/user/show";
     }
     
     @RequestMapping(value = "/history/{id}", method = RequestMethod.GET)
