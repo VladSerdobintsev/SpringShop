@@ -75,12 +75,13 @@ public class ShopUsersController {
             Integer id,
             ModelMap model) {
         User u = userService.find(id);
+        u.setId(id);
         model.addAttribute("user", u);
         
         return "editUser";
     }
     
-    @RequestMapping(value = "/userEditSave", method = RequestMethod.GET)
+    @RequestMapping(value = "/userEditSave", method = RequestMethod.POST)
     public String userEditSave(
             @RequestParam(value = "id") Integer id,
             @RequestParam(value = "name") String name,
@@ -88,11 +89,6 @@ public class ShopUsersController {
             @RequestParam(value = "password") String password,
             @RequestParam(value = "isAdmin", required = false, defaultValue = "false") Boolean isAdmin, 
             Model model) {
-        model.addAttribute("id", id);
-        model.addAttribute("name", name);
-        model.addAttribute("email", email);
-        model.addAttribute("password", password);
-        model.addAttribute("isAdmin", isAdmin);
          User u = new User(name, email, password, isAdmin);
          u.setId(id);
 

@@ -12,7 +12,7 @@
         <title>Редактировать пользователя</title>
     </head>
     <body>
-        <form method="GET" action="<c:url value="/user/userEditSave" />">
+        <form method="POST" action="<c:url value="/user/userEditSave" />">
             <input type="hidden" name="id" value="${user.getId()}" />
             <label for="name">Имя:</label>
             <input type="text" name="name" value="${user.getName()}" />
