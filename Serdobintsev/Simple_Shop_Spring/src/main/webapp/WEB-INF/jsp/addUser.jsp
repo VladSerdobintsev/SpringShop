@@ -19,8 +19,7 @@
             <a href="<c:url value="/user/logout" />">Выход</a>
         </div>
         <hr/>
-        <form method="GET" action="<c:url value="/user/userSave"/>">
-            <input type="hidden" name="id" />
+        <form method="POST" action="<c:url value="/user/addUser"/>">
             <label for="name">Имя:</label>
             <input type="text" name="name" />
             <label for="email">Email:</label>

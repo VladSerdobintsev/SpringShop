@@ -1,4 +1,4 @@
-
+﻿
 <%@page import="org.itstep.java.web.mavenShop3.model.Order"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -29,7 +29,7 @@
                             <ul sidebar_list>
                                 <input type="hidden" name="id" value="${thisUser.id}" />
                                  <div>
-                                     <label for="name">Название: </label>
+                                     <label for="name">Имя: </label>
                                      <input type="text" name="userName" value="${current.name}" readonly="readonly" />
                                  </div>
                                  <div>

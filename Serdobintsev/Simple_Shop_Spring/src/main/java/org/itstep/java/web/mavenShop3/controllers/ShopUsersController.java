@@ -86,7 +86,7 @@ public class ShopUsersController {
             @RequestParam(value = "name") String name,
             @RequestParam(value = "email") String email, 
             @RequestParam(value = "password") String password,
-            @RequestParam(value = "isAdmin", required = false, defaultValue = "false") boolean isAdmin, 
+            @RequestParam(value = "isAdmin", required = false, defaultValue = "false") Boolean isAdmin, 
             Model model) {
         model.addAttribute("id", id);
         model.addAttribute("name", name);
@@ -96,7 +96,7 @@ public class ShopUsersController {
          User u = new User(name, email, password, isAdmin);
          u.setId(id);
 
-        userService.save(u);
+        userService.edit(u);
         return "redirect:/user/show";
     }
     
@@ -105,20 +105,31 @@ public class ShopUsersController {
         return "addUser";
     }
     
+    @RequestMapping(value = "/addUser", method = RequestMethod.POST)
+    public String addUser(
+            @RequestParam("name") String name,
+            @RequestParam("email") String email,
+            @RequestParam("password") String password,
+            @RequestParam(value = "isAdmin", required = false, defaultValue = "false") Boolean isAdmin,
+            Model model){
+        User user=new User(name, email, password, isAdmin);
+        userService.Add(user);
+        return "redirect:/user/show";
+    }
+    
     @RequestMapping(value = "/userSave", method = RequestMethod.GET)
     public String userSave(
             @RequestParam(value = "name") String name,
             @RequestParam(value = "email") String email, 
             @RequestParam(value = "password") String password,
-            @RequestParam(value = "isAdmin", required = false, defaultValue = "false") boolean isAdmin, 
+            @RequestParam(value = "isAdmin", required = false, defaultValue = "false") Boolean isAdmin, 
             Model model){
         model.addAttribute("name", name);
         model.addAttribute("email", email);
         model.addAttribute("password", password);       
         model.addAttribute("isAdmin", isAdmin);
         User u = new User(name, email, password, isAdmin);
-        userService.save(u);
-        
+        userService.edit(u);
         return "redirect:/user/show";
     }
     

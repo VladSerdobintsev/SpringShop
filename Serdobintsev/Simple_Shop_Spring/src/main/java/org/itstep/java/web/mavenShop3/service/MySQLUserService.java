@@ -62,10 +62,10 @@ public class MySQLUserService implements UserService, UserDetailsService {
         
         return users;
     }
-    
     @Override
-    public int save(User u) {
-        String query = "INSERT INTO users (name, email, password,isAdmin) values (?, ?, ?, ?)";
+    public int Add(User u)
+    {
+        String query="INSERT INTO users (name, email, password, isAdmin) values (?, ?, ?, ?)";
         PreparedStatement stmt = null;      
         try {
             //stmt = conn.prepareStatement(query);
@@ -74,7 +74,6 @@ public class MySQLUserService implements UserService, UserDetailsService {
             stmt.setString(2, u.getEmail());
             stmt.setString(3, u.getPassword());
             stmt.setBoolean(4, u.isIsAdmin());
-            
             stmt.execute();
             ResultSet rs = stmt.getGeneratedKeys();
             rs.next();
@@ -92,6 +91,7 @@ public class MySQLUserService implements UserService, UserDetailsService {
             }
         }
     }
+    
             
     @Override
     public boolean edit(User u) {
@@ -153,7 +153,7 @@ public class MySQLUserService implements UserService, UserDetailsService {
         }        
         return user;
     }
-       
+    
     @Override
     public User findByName(String name){
         User user = null;

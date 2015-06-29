@@ -23,9 +23,8 @@ public interface UserService {
     List<User> findAll();
 
     User findByName(String name);
-
-    List<User> findByNames(String name);
-
-    int save(User u);
     
+    List<User> findByNames(String name);
+    
+    int Add(User u);    
 }
